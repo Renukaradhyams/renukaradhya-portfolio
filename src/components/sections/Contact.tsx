@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Mail, Linkedin, Github, Send, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,11 +17,20 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+  try {
+    await emailjs.send(
+      "aradhyaaradhya",
+      "aradhya",
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    );
 
     toast({
       title: "Message Sent!",
@@ -28,8 +38,20 @@ const Contact = () => {
     });
 
     setFormData({ name: "", email: "", message: "" });
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+
+    toast({
+      title: "Failed to send",
+      description: "Something went wrong. Please try again later.",
+      variant: "destructive",
+    });
+  } finally {
     setIsSubmitting(false);
-  };
+  }
+};
+
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
