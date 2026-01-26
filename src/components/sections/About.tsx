@@ -1,38 +1,52 @@
-import { Code2, Brain, Cpu, Cloud, GraduationCap, Briefcase } from "lucide-react";
+import { Code2, Brain, Cpu, Cloud, GraduationCap, Briefcase, Rocket } from "lucide-react";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion";
+import GlassCard from "@/components/ui/GlassCard";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import { motion } from "framer-motion";
 
 const highlights = [
   {
     icon: Code2,
     title: "Software Development",
     description: "Java, SQL, Web technologies with clean code practices",
+    gradient: "from-blue-500 to-indigo-600",
   },
   {
     icon: Brain,
     title: "AI Fundamentals",
     description: "Machine learning concepts and data analytics",
+    gradient: "from-purple-500 to-pink-500",
   },
   {
     icon: Cloud,
     title: "Cloud Computing",
     description: "Microsoft Azure deployment and cloud services",
+    gradient: "from-cyan-500 to-blue-500",
   },
   {
     icon: Cpu,
     title: "Embedded Systems",
     description: "Raspberry Pi, Arduino, and microcontrollers",
+    gradient: "from-emerald-500 to-teal-500",
   },
 ];
 
 const stats = [
-  { icon: GraduationCap, value: "8.19", label: "CGPA" },
-  { icon: Briefcase, value: "4+", label: "Internships" },
+  { icon: GraduationCap, value: 8.19, label: "CGPA", suffix: "", decimals: 2 },
+  { icon: Briefcase, value: 4, label: "Internships", suffix: "+" },
+  { icon: Rocket, value: 10, label: "Projects", suffix: "+" },
 ];
 
 const About = () => {
   return (
-    <section id="about" className="section bg-background">
-      <div className="container-custom">
+    <section id="about" className="section bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <FadeIn direction="right">
@@ -41,7 +55,7 @@ const About = () => {
             </p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
               Passionate About Building{" "}
-              <span className="text-primary">Intelligent Solutions</span>
+              <span className="gradient-text">Intelligent Solutions</span>
             </h2>
             
             <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -65,17 +79,30 @@ const About = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex gap-8 mt-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <stat.icon className="h-6 w-6 text-primary" />
+            <div className="flex flex-wrap gap-6 mt-8">
+              {stats.map((stat, index) => (
+                <motion.div 
+                  key={stat.label} 
+                  className="flex items-center gap-3"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
+                    <stat.icon className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                    <p className="font-heading text-2xl font-bold text-foreground">{stat.value}</p>
+                    <p className="font-heading text-2xl font-bold text-foreground">
+                      {stat.decimals ? (
+                        <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                      ) : (
+                        <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                      )}
+                    </p>
                     <p className="text-sm text-muted-foreground">{stat.label}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </FadeIn>
@@ -84,17 +111,21 @@ const About = () => {
           <StaggerContainer className="grid sm:grid-cols-2 gap-4" staggerDelay={0.1}>
             {highlights.map((item) => (
               <StaggerItem key={item.title}>
-                <div className="skill-card group h-full">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300">
-                    <item.icon className="h-6 w-6 text-primary" />
-                  </div>
+                <GlassCard className="p-6 h-full">
+                  <motion.div 
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 shadow-lg`}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <item.icon className="h-6 w-6 text-white" />
+                  </motion.div>
                   <h3 className="font-heading font-semibold text-foreground mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm text-muted-foreground">
                     {item.description}
                   </p>
-                </div>
+                </GlassCard>
               </StaggerItem>
             ))}
           </StaggerContainer>
