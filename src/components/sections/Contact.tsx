@@ -94,11 +94,12 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section bg-secondary/30 dark:bg-background relative overflow-hidden">
+    <section id="contact" className="section bg-secondary/30 dark:bg-secondary/5 section-pattern relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-accent/5 to-transparent rounded-full blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">

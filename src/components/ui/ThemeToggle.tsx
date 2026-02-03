@@ -1,41 +1,43 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ThemeToggle = ({ className = "" }: { className?: string }) => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   return (
     <Button
       variant="ghost"
       size="icon"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={`relative overflow-hidden ${className}`}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className={`relative overflow-hidden rounded-full hover:bg-accent/10 ${className}`}
       aria-label="Toggle theme"
     >
-      <motion.div
-        initial={false}
-        animate={{
-          rotate: theme === "dark" ? 0 : 180,
-          scale: theme === "dark" ? 1 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className="absolute"
-      >
-        <Moon className="h-5 w-5" />
-      </motion.div>
-      <motion.div
-        initial={false}
-        animate={{
-          rotate: theme === "light" ? 0 : -180,
-          scale: theme === "light" ? 1 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className="absolute"
-      >
-        <Sun className="h-5 w-5" />
-      </motion.div>
+      <AnimatePresence mode="wait" initial={false}>
+        {isDark ? (
+          <motion.div
+            key="moon"
+            initial={{ y: -20, opacity: 0, rotate: -90 }}
+            animate={{ y: 0, opacity: 1, rotate: 0 }}
+            exit={{ y: 20, opacity: 0, rotate: 90 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <Moon className="h-5 w-5" />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="sun"
+            initial={{ y: -20, opacity: 0, rotate: 90 }}
+            animate={{ y: 0, opacity: 1, rotate: 0 }}
+            exit={{ y: 20, opacity: 0, rotate: -90 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <Sun className="h-5 w-5" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Button>
   );
 };

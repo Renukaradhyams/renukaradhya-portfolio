@@ -38,11 +38,12 @@ const stats = [
 
 const Services = () => {
   return (
-    <section id="services" className="section bg-secondary/50 dark:bg-background relative overflow-hidden">
+    <section id="services" className="section bg-secondary/50 dark:bg-secondary/10 section-pattern-alt relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container-custom relative z-10">
