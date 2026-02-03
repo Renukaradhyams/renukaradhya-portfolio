@@ -81,11 +81,12 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="section-alt relative overflow-hidden">
+    <section id="skills" className="section-alt section-pattern relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 section-dots opacity-30" />
       </div>
 
       <div className="container-custom relative z-10">
