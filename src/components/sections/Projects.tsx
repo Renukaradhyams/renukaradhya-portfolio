@@ -14,6 +14,7 @@ const projects = [
     gradient: "from-violet-500 to-indigo-600",
     glowColor: "rgba(139,92,246,0.5)",
     link: "https://unnathicnc.com/",
+    image: "/project_photo/unnathi.png"
   },
   {
     title: "Karunadu LED & Lighting",
@@ -24,6 +25,7 @@ const projects = [
     gradient: "from-cyan-500 to-blue-600",
     glowColor: "rgba(6,182,212,0.5)",
     link: "https://www.karunaduled.in/",
+    image: "/project_photo/karunaduled.png"
   },
   {
     title: "Dental Clinic Management",
@@ -34,6 +36,7 @@ const projects = [
     gradient: "from-fuchsia-500 to-pink-600",
     glowColor: "rgba(217,70,239,0.5)",
     link: "https://aradhyanextgenlabs.online/",
+    image: "/project_photo/dental.png"
   },
   {
     title: "Galaxy Power Solar",
@@ -44,6 +47,7 @@ const projects = [
     gradient: "from-emerald-400 to-teal-500",
     glowColor: "rgba(52,211,153,0.5)",
     link: "https://www.galaxypowersolar.in/",
+    image: "/project_photo/galaxypowersolar.png"
   },
   {
     title: "Aradhya NextGen",
@@ -54,6 +58,7 @@ const projects = [
     gradient: "from-blue-400 to-indigo-500",
     glowColor: "rgba(96,165,250,0.5)",
     link: "https://aradhyanextgen.com/",
+    image: "/project_photo/aradhyanextgen.png"
   },
   {
     title: "Hrithik Chit",
@@ -64,6 +69,7 @@ const projects = [
     gradient: "from-violet-400 to-purple-600",
     glowColor: "rgba(167,139,250,0.5)",
     link: "https://www.hrithikchit.com/",
+    image: "/project_photo/hrithikchit.png"
   },
 ];
 
@@ -114,18 +120,20 @@ const Projects = () => {
                 <GlassCard 
                   className="h-full flex flex-col p-0 overflow-hidden border border-white/10 bg-white/[0.02] group"
                 >
-                  {/* Card Header Pattern */}
-                  <div className={`h-32 w-full relative overflow-hidden bg-gradient-to-br ${project.gradient} opacity-80 group-hover:opacity-100 transition-opacity`}>
-                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent" />
-                    <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                  {/* Card Header Image */}
+                  <div className="h-48 w-full relative overflow-hidden group-hover:opacity-100 transition-opacity">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Dark gradient overlay so text below it blends well */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent pointer-events-none" />
                     
-                    {/* Floating Icon */}
-                    <motion.div 
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 shadow-lg"
-                      whileHover={{ scale: 1.1, rotate: 10 }}
-                    >
-                      <project.icon className="w-8 h-8 text-white" />
-                    </motion.div>
+                    {/* Floating Icon Over Image */}
+                    <div className={`absolute top-4 right-4 w-10 h-10 rounded-xl bg-gradient-to-br ${project.gradient} shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0`}>
+                      <project.icon className="w-5 h-5 text-white" />
+                    </div>
                   </div>
 
                   {/* Content */}
