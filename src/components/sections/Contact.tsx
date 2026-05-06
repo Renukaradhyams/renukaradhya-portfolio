@@ -1,6 +1,5 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
-import { Mail, Linkedin, Github, Send, MapPin, Phone, CheckCircle, Instagram } from "lucide-react";
+import { Mail, Linkedin, Github, Send, MapPin, Phone, CheckCircle, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,28 +23,30 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        "aradhyaaradhya",
-        "aradhya",
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
+      const response = await fetch("https://formspree.io/f/mqenbnqq", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
-      setIsSuccess(true);
-      toast({
-        title: "Message Sent! 🎉",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        body: JSON.stringify(formData),
       });
 
-      setFormData({ name: "", email: "", message: "" });
-      
-      setTimeout(() => setIsSuccess(false), 3000);
+      if (response.ok) {
+        setIsSuccess(true);
+        toast({
+          title: "Message Sent! 🎉",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+
+        setFormData({ name: "", email: "", message: "" });
+        
+        setTimeout(() => setIsSuccess(false), 3000);
+      } else {
+        throw new Error("Failed to send message");
+      }
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("Formspree Error:", error);
 
       toast({
         title: "Failed to send",
@@ -71,71 +72,74 @@ const Contact = () => {
       icon: Linkedin,
       href: "https://www.linkedin.com/in/renukaradhya-m-s/",
       label: "LinkedIn",
-      color: "hover:bg-blue-500",
+      color: "hover:bg-blue-600 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]",
     },
     {
       icon: Github,
-      href: "https://github.com",
+      href: "https://github.com/Renukaradhyams",
       label: "GitHub",
-      color: "hover:bg-gray-700",
+      color: "hover:bg-gray-800 hover:shadow-[0_0_20px_rgba(31,41,55,0.5)]",
     },
     {
-      icon: Instagram,
-      href: "https://instagram.com",
-      label: "Instagram",
-      color: "hover:bg-pink-500",
+      icon: Globe,
+      href: "https://renukaradhyams.netlify.app",
+      label: "Portfolio",
+      color: "hover:bg-cyan-600 hover:shadow-[0_0_20px_rgba(8,145,178,0.5)]",
     },
     {
       icon: Mail,
       href: "mailto:renukaradhyarenums@gmail.com",
       label: "Email",
-      color: "hover:bg-accent",
+      color: "hover:bg-violet-600 hover:shadow-[0_0_20px_rgba(124,58,237,0.5)]",
     },
   ];
 
   return (
-    <section id="contact" className="section bg-secondary/30 dark:bg-secondary/5 section-pattern relative overflow-hidden">
+    <section id="contact" className="section bg-background relative overflow-hidden py-32">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-accent/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/4 -left-40 w-[500px] h-[500px] bg-violet-600/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-cyan-600/5 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-violet-500/5 via-cyan-500/5 to-transparent rounded-full blur-[100px]" />
       </div>
 
       <div className="container-custom relative z-10">
-        <FadeIn className="text-center mb-12">
-          <p className="text-accent font-semibold mb-2 tracking-wide text-sm uppercase">
-            Get in Touch
-          </p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Let's <span className="gradient-text">Connect</span>
+        <FadeIn className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6 mx-auto">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <p className="text-cyan-400 font-medium tracking-wide text-xs uppercase">
+              Get in Touch
+            </p>
+          </div>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Connect</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            I'm actively seeking entry-level opportunities in software engineering. 
-            Feel free to reach out for collaborations, opportunities, or just a conversation.
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            I'm actively seeking opportunities in software engineering. 
+            Feel free to reach out for collaborations, opportunities, or just to say hi.
           </p>
         </FadeIn>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
           <FadeIn direction="right">
-            <div className="space-y-6">
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-6">
+            <div className="space-y-8">
+              <h3 className="font-heading text-2xl font-bold text-foreground mb-6">
                 Contact Information
               </h3>
 
               <div className="space-y-4">
                 <motion.a
                   href="mailto:renukaradhyarenums@gmail.com"
-                  className="flex items-center gap-4 p-4 rounded-xl bg-card/60 dark:bg-card/40 backdrop-blur-sm border border-border/50 hover:border-accent/50 transition-all group"
+                  className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-violet-500/30 transition-all group"
                   whileHover={{ x: 4 }}
                 >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition-colors">
-                    <Mail className="h-5 w-5 text-accent" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg border border-white/10">
+                    <Mail className="h-6 w-6 text-cyan-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium text-foreground">
+                    <p className="text-sm font-medium text-muted-foreground mb-1 uppercase tracking-wider">Email</p>
+                    <p className="font-bold text-foreground group-hover:text-cyan-400 transition-colors">
                       renukaradhyarenums@gmail.com
                     </p>
                   </div>
@@ -143,47 +147,47 @@ const Contact = () => {
 
                 <motion.a
                   href="tel:+916360076463"
-                  className="flex items-center gap-4 p-4 rounded-xl bg-card/60 dark:bg-card/40 backdrop-blur-sm border border-border/50 hover:border-accent/50 transition-all group"
+                  className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] hover:border-violet-500/30 transition-all group"
                   whileHover={{ x: 4 }}
                 >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition-colors">
-                    <Phone className="h-5 w-5 text-accent" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg border border-white/10">
+                    <Phone className="h-6 w-6 text-violet-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Phone</p>
-                    <p className="font-medium text-foreground">+91-6360076463</p>
+                    <p className="text-sm font-medium text-muted-foreground mb-1 uppercase tracking-wider">Phone</p>
+                    <p className="font-bold text-foreground group-hover:text-violet-400 transition-colors">+91-6360076463</p>
                   </div>
                 </motion.a>
 
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-card/60 dark:bg-card/40 backdrop-blur-sm border border-border/50">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-accent" />
+                <div className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20 flex items-center justify-center shadow-lg border border-white/10">
+                    <MapPin className="h-6 w-6 text-cyan-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="font-medium text-foreground">Davangere, India</p>
+                    <p className="text-sm font-medium text-muted-foreground mb-1 uppercase tracking-wider">Location</p>
+                    <p className="font-bold text-foreground">Davangere, India</p>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-6">
-                <h3 className="font-heading text-xl font-semibold text-foreground mb-4">
-                  Connect on Social
+              <div className="pt-8 border-t border-white/5">
+                <h3 className="font-heading text-xl font-bold text-foreground mb-6">
+                  Social Profiles
                 </h3>
 
-                <div className="flex gap-3">
+                <div className="flex gap-4">
                   {socialLinks.map((social) => (
                     <motion.a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-12 h-12 rounded-xl bg-card/60 dark:bg-card/40 backdrop-blur-sm border border-border/50 flex items-center justify-center ${social.color} hover:text-white hover:border-transparent transition-all`}
+                      className={`w-14 h-14 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-muted-foreground hover:text-white transition-all duration-300 ${social.color}`}
                       aria-label={social.label}
-                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileHover={{ scale: 1.1, y: -5 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <social.icon className="h-5 w-5" />
+                      <social.icon className="h-6 w-6" />
                     </motion.a>
                   ))}
                 </div>
@@ -193,12 +197,12 @@ const Contact = () => {
 
           {/* Contact Form */}
           <FadeIn direction="left" delay={0.1}>
-            <GlassCard className="p-6">
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-6">
+            <GlassCard className="p-8 border border-white/5 bg-white/[0.02]">
+              <h3 className="font-heading text-2xl font-bold text-foreground mb-8 text-center">
                 Send a Message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
@@ -213,7 +217,7 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="John Doe"
                     required
-                    className="bg-background/50 border-border/50 focus:border-accent focus:ring-accent/20"
+                    className="bg-background border-white/10 focus:border-cyan-500 focus:ring-cyan-500/20 h-12 rounded-xl"
                   />
                 </div>
 
@@ -232,7 +236,7 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="john@example.com"
                     required
-                    className="bg-background/50 border-border/50 focus:border-accent focus:ring-accent/20"
+                    className="bg-background border-white/10 focus:border-cyan-500 focus:ring-cyan-500/20 h-12 rounded-xl"
                   />
                 </div>
 
@@ -251,7 +255,7 @@ const Contact = () => {
                     placeholder="Your message here..."
                     rows={5}
                     required
-                    className="bg-background/50 border-border/50 resize-none focus:border-accent focus:ring-accent/20"
+                    className="bg-background border-white/10 resize-none focus:border-cyan-500 focus:ring-cyan-500/20 rounded-xl"
                   />
                 </div>
 
@@ -261,22 +265,27 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
+                    className="pt-2"
                   >
                     <Button
                       type="submit"
                       size="lg"
-                      className={`w-full group ${isSuccess ? 'bg-emerald-500 hover:bg-emerald-600' : ''}`}
+                      className={`w-full h-14 rounded-xl text-base font-bold tracking-wide transition-all duration-300 ${
+                        isSuccess 
+                          ? 'bg-emerald-500 hover:bg-emerald-600 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)]' 
+                          : 'bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(8,145,178,0.5)]'
+                      }`}
                       disabled={isSubmitting}
                     >
                       {isSuccess ? (
                         <>
-                          <CheckCircle className="mr-2 h-5 w-5" />
-                          Message Sent!
+                          <CheckCircle className="mr-2 h-6 w-6" />
+                          Message Sent Successfully!
                         </>
                       ) : isSubmitting ? (
                         <>
                           <motion.div
-                            className="mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full"
+                            className="mr-3 h-5 w-5 border-2 border-current border-t-transparent rounded-full"
                             animate={{ rotate: 360 }}
                             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                           />
@@ -284,7 +293,7 @@ const Contact = () => {
                         </>
                       ) : (
                         <>
-                          <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                          <Send className="mr-2 h-5 w-5" />
                           Send Message
                         </>
                       )}

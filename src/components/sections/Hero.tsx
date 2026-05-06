@@ -1,29 +1,32 @@
-import { ArrowDown, Download, FolderKanban, Phone, Mail, Code, Sparkles } from "lucide-react";
+import { ArrowDown, Download, FolderKanban, Phone, Mail, Code, Sparkles, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import TypingAnimation from "@/components/ui/TypingAnimation";
-import profileImage from "/WhatsApp Image 2026-01-12 at 6.56.30 PM.jpeg";
+import profileImage from "/Renukaradhya_MS.jpeg";
 
 const roles = [
-  "Software Engineer",
-  "Web Developer",
-  "AI & ML Enthusiast",
-  "Robotics Explorer",
+  "Associate Software Engineer",
+  "Full Stack Developer",
+  "React & Node.js Specialist",
+];
+
+const techStack = [
+  "React.js", "Node.js", "TypeScript", "MySQL", "Azure", "GitHub", "Express.js"
 ];
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30 dark:from-background dark:via-secondary/10 dark:to-background">
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30 dark:from-background dark:via-indigo-950/20 dark:to-background">
         {/* Animated mesh gradient */}
         <motion.div
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse at 20% 20%, hsl(var(--accent) / 0.15) 0%, transparent 50%),
-              radial-gradient(ellipse at 80% 80%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
-              radial-gradient(ellipse at 40% 60%, hsl(174 70% 45% / 0.08) 0%, transparent 40%)
+              radial-gradient(ellipse at 20% 20%, hsl(260 100% 60% / 0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, hsl(190 100% 50% / 0.1) 0%, transparent 50%),
+              radial-gradient(ellipse at 40% 60%, hsl(300 100% 50% / 0.08) 0%, transparent 40%)
             `,
           }}
           animate={{
@@ -38,36 +41,23 @@ const Hero = () => {
 
         {/* Grid pattern */}
         <div 
-          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `
               linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
               linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)
             `,
-            backgroundSize: '60px 60px',
+            backgroundSize: '40px 40px',
           }}
         />
 
         {/* Floating orbs */}
         <motion.div
-          className="absolute top-1/4 left-1/5 w-72 h-72 rounded-full bg-accent/10 blur-3xl"
+          className="absolute top-1/4 left-1/5 w-72 h-72 rounded-full bg-violet-600/20 blur-[100px]"
           animate={{
-            x: [0, 30, 0],
-            y: [0, -20, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/5 w-96 h-96 rounded-full bg-primary/10 blur-3xl"
-          animate={{
-            x: [0, -40, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.15, 1],
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.2, 1],
           }}
           transition={{
             duration: 12,
@@ -75,32 +65,23 @@ const Hero = () => {
             ease: "easeInOut",
           }}
         />
-
-        {/* Floating code symbols */}
         <motion.div
-          className="absolute top-1/3 right-1/4 text-6xl text-accent/10 font-mono"
+          className="absolute bottom-1/4 right-1/5 w-96 h-96 rounded-full bg-cyan-600/20 blur-[100px]"
           animate={{
-            y: [0, -15, 0],
-            rotate: [0, 5, 0],
+            x: [0, -60, 0],
+            y: [0, 40, 0],
+            scale: [1, 1.3, 1],
           }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        >
-          {"</>"}
-        </motion.div>
-        <motion.div
-          className="absolute bottom-1/3 left-1/6 text-4xl text-primary/10 font-mono"
-          animate={{
-            y: [0, 10, 0],
-            rotate: [0, -5, 0],
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        >
-          {"{ }"}
-        </motion.div>
+        />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-custom px-4 py-20">
+      <div className="relative z-10 container-custom px-4 py-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left max-w-2xl">
@@ -109,119 +90,107 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6 backdrop-blur-md"
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
               </span>
-              <span className="text-sm font-medium text-accent">Open to Work • ECE Graduate</span>
+              <span className="text-sm font-medium text-violet-300">Available for Opportunities</span>
             </motion.div>
             
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight"
+              className="font-heading text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1]"
             >
-              Hi, I'm{" "}
-              <span className="relative inline-block">
-                <span className="gradient-text">Renukaradhya M S</span>
-                <motion.span
-                  className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-accent to-primary rounded-full"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                />
+              Building <br className="hidden md:block"/>
+              <span className="relative inline-block mt-2">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400">
+                  Scalable Digital
+                </span>
               </span>
+              <br/>
+              Experiences
             </motion.h1>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 h-10 flex items-center justify-center lg:justify-start gap-2"
+              className="text-xl md:text-2xl text-muted-foreground mb-8 h-10 flex items-center justify-center lg:justify-start gap-3"
             >
-              <Code className="h-6 w-6 text-accent" />
-              <TypingAnimation texts={roles} typingSpeed={80} deletingSpeed={40} />
+              <Code className="h-6 w-6 text-cyan-400" />
+              <TypingAnimation texts={roles} typingSpeed={60} deletingSpeed={30} />
             </motion.div>
             
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
+            {/* Tech Stack Badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-10"
             >
-              Electronics and Communication Engineering graduate with hands-on experience in{" "}
-              <span className="text-foreground font-medium">Software Development</span>,{" "}
-              <span className="text-foreground font-medium">AI & Machine Learning</span>,{" "}
-              <span className="text-foreground font-medium">Cloud Computing</span>, and{" "}
-              <span className="text-foreground font-medium">Robotics</span>. 
-              Building practical, scalable solutions.
-            </motion.p>
+              {techStack.map((tech, idx) => (
+                <motion.span
+                  key={tech}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="px-3 py-1.5 text-sm font-medium rounded-md bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:border-violet-500/50 hover:bg-violet-500/10 transition-all cursor-default"
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
             >
-              <Button size="lg" asChild className="group bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg shadow-accent/20">
+              <Button size="lg" asChild className="group bg-violet-600 hover:bg-violet-500 text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] transition-all rounded-full px-8">
                 <a href="#projects">
                   <FolderKanban className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
                   View Projects
                 </a>
               </Button>
-              <Button variant="outline" size="lg" asChild className="group border-border/50 hover:border-accent hover:bg-accent/5">
+              <Button variant="outline" size="lg" asChild className="group border-white/10 hover:border-cyan-500/50 hover:bg-cyan-500/10 rounded-full px-8 backdrop-blur-md text-foreground">
                 <a href="/Renukaradhya_MS_Resume.pdf" download>
                   <Download className="mr-2 h-5 w-5 transition-transform group-hover:-translate-y-0.5" />
-                  Download Resume
+                  Resume
                 </a>
               </Button>
-            </motion.div>
-
-            {/* Quick contact info */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-muted-foreground"
-            >
-              <a href="tel:+916360076463" className="flex items-center gap-2 hover:text-accent transition-colors">
-                <div className="p-2 rounded-full bg-accent/10">
-                  <Phone className="h-3 w-3 text-accent" />
-                </div>
-                +91-6360076463
-              </a>
-              <a href="mailto:renukaradhyarenums@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
-                <div className="p-2 rounded-full bg-accent/10">
-                  <Mail className="h-3 w-3 text-accent" />
-                </div>
-                renukaradhyarenums@gmail.com
-              </a>
+              <Button variant="ghost" size="lg" asChild className="group hover:bg-white/5 rounded-full px-6">
+                <a href="#contact">
+                  <Send className="mr-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  Contact
+                </a>
+              </Button>
             </motion.div>
           </div>
 
           {/* Profile Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative lg:ml-10"
           >
             <div className="relative">
               {/* Decorative elements */}
               <motion.div
-                className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-accent/20 via-transparent to-primary/20 blur-xl"
+                className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-violet-500/20 via-transparent to-cyan-500/20 blur-xl"
                 animate={{
                   opacity: [0.5, 0.8, 0.5],
+                  rotate: [0, 5, 0]
                 }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
               
               {/* Animated border */}
               <motion.div
-                className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent via-primary to-accent"
+                className="absolute -inset-[2px] rounded-[2rem] bg-gradient-to-r from-violet-500 via-cyan-400 to-violet-500 opacity-70"
                 style={{ backgroundSize: '200% 100%' }}
                 animate={{
                   backgroundPosition: ['0% 0%', '100% 0%', '0% 0%'],
@@ -229,38 +198,41 @@ const Hero = () => {
                 transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
               />
               
-              {/* Profile image */}
-              <div className="relative profile-image w-72 h-72 md:w-80 md:h-80 rounded-2xl">
+              {/* Profile image container */}
+              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-[2rem] overflow-hidden bg-background">
                 <img
                   src={profileImage}
                   alt="Renukaradhya M S"
-                  className="w-full h-full object-cover object-top rounded-xl"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                 />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Floating badges */}
               <motion.div
-                className="absolute -top-4 -right-4 glass-card px-4 py-2 rounded-xl border border-accent/30"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 }}
-                whileHover={{ scale: 1.05 }}
+                className="absolute -top-6 -right-6 bg-background/80 backdrop-blur-xl px-5 py-3 rounded-2xl border border-white/10 shadow-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, type: "spring" }}
+                whileHover={{ scale: 1.05, y: -5 }}
               >
-                <div className="flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-accent" />
-                  <span className="text-sm font-semibold">CGPA 8.19</span>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">10+</span>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Projects</span>
                 </div>
               </motion.div>
+              
               <motion.div
-                className="absolute -bottom-4 -left-4 glass-card px-4 py-2 rounded-xl border border-primary/30"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1 }}
-                whileHover={{ scale: 1.05 }}
+                className="absolute -bottom-6 -left-6 bg-background/80 backdrop-blur-xl px-5 py-3 rounded-2xl border border-white/10 shadow-2xl"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, type: "spring" }}
+                whileHover={{ scale: 1.05, y: -5 }}
               >
-                <div className="flex items-center gap-2">
-                  <Code className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-semibold">4+ Internships</span>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">3+</span>
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Internships</span>
                 </div>
               </motion.div>
             </div>
@@ -271,17 +243,17 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          transition={{ duration: 0.6, delay: 1 }}
+          className="absolute bottom-4 left-1/2 -translate-x-1/2"
         >
           <motion.a
             href="#about"
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-cyan-400 transition-colors"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="text-xs font-medium tracking-wider uppercase">Scroll</span>
-            <ArrowDown className="h-5 w-5" />
+            <span className="text-[10px] font-medium tracking-[0.2em] uppercase">Scroll</span>
+            <div className="w-[1px] h-12 bg-gradient-to-b from-current to-transparent" />
           </motion.a>
         </motion.div>
       </div>
@@ -290,3 +262,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
