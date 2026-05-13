@@ -8,7 +8,7 @@ const experiences = [
     title: "Associate Software Engineer",
     company: "Sakyaitech Solutions",
     location: "India",
-    duration: "Nov 2025 – Present",
+    duration: "Sep 2025 – Present",
     description: [
       "Building scalable full-stack applications",
       "Working with Java, React.js, APIs, and databases",

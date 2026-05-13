@@ -9,7 +9,7 @@ const education = [
     degree: "Bachelor of Engineering",
     field: "Electronics and Communication",
     institution: "Bapuji Institute of Engineering And Technology",
-    year: "Nov 2021 – May 2025",
+    year: "Nov 2021 – July 2025",
     grade: "CGPA: 8.19",
   },
   {
@@ -30,7 +30,7 @@ const education = [
 
 const certifications = [
   {
-    name: "Artificial Intelligence Foundation",
+    name: "Artificial Intelligence",
     issuer: "Infosys Springboard",
     year: "Aug 2023",
     color: "from-purple-500 to-pink-500",
