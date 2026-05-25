@@ -8,37 +8,37 @@ const certifications = [
   {
     name: "Artificial Intelligence",
     issuer: "Infosys Springboard",
-    year: "2023",
+    year: "Aug 2023",
     color: "from-violet-500 to-indigo-500",
   },
   {
-    name: "Microsoft Azure AI Fundamentals",
+    name: "Microsoft Azure, AI Fundamentals",
     issuer: "Microsoft",
-    year: "2023",
+    year: "Aug 2023",
     color: "from-cyan-500 to-blue-500",
   },
   {
-    name: "Python",
+    name: "Python Programming",
     issuer: "NPTEL",
-    year: "2023",
+    year: "May 2023 – Oct 2024",
     color: "from-fuchsia-500 to-pink-500",
   },
   {
-    name: "Java",
+    name: "Java Programming",
     issuer: "NPTEL",
-    year: "2023",
+    year: "May 2023 – Oct 2024",
     color: "from-emerald-400 to-teal-500",
   },
   {
     name: "Data Analytics",
     issuer: "NPTEL",
-    year: "2024",
+    year: "May 2023 – Oct 2024",
     color: "from-blue-400 to-indigo-500",
   },
   {
     name: "Data Science",
     issuer: "NPTEL",
-    year: "2024",
+    year: "May 2023 – Oct 2024",
     color: "from-violet-400 to-purple-600",
   },
 ];
@@ -46,21 +46,21 @@ const certifications = [
 const achievements = [
   {
     icon: Medal,
-    title: "State Level Runner-Up",
-    description: "ISTE Product Marketing",
-    year: "2022",
+    title: "Runner-Up",
+    description: "ISTE – State Level | Product Marketing",
+    year: "July 2022",
   },
   {
     icon: Medal,
     title: "Runner-Up",
-    description: "STM32 Microcontrollers",
-    year: "2023",
+    description: "STM32 – Microcontrollers | Institute-Level",
+    year: "Nov 2023",
   },
   {
     icon: Trophy,
     title: "Institute Best Project",
     description: "Humanoid Robot",
-    year: "2025",
+    year: "May 2025",
   },
 ];
 

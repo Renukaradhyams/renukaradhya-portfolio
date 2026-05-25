@@ -10,51 +10,49 @@ const experiences = [
     location: "India",
     duration: "Sep 2025 – Present",
     description: [
-      "Building scalable full-stack applications",
-      "Working with Java, React.js, APIs, and databases",
-      "Developing production-ready solutions",
+      "Developed scalable full-stack web applications using React.js, Node.js, TypeScript, and MySQL for client-based business solutions.",
+      "Built responsive frontend interfaces and integrated REST APIs, SMTP email services, and database-driven functionalities for inquiry automation and workflow management systems.",
+      "Collaborated on deployment workflows, version control, debugging, testing, and production-ready web application maintenance using GitHub and Hostinger.",
+      "Worked on SEO optimization, frontend performance enhancement, responsive UI development, and debugging across multiple live client projects."
     ],
     type: "Software Engineering",
     gradient: "from-violet-500 to-indigo-500",
   },
   {
-    title: "Full Stack Development Intern",
+    title: "Web Development Intern",
     company: "TechCiti Technologies",
     location: "India",
     duration: "Oct 2024 – Jan 2025",
     description: [
-      "Developed responsive web applications",
-      "Worked on real-world client projects",
-      "Improved frontend performance and UI responsiveness",
+      "Developed responsive and user-friendly web pages using HTML, CSS, and JavaScript for client-based projects.",
+      "Improved frontend responsiveness, UI consistency, and browser compatibility across multiple devices."
     ],
     type: "Web Development",
     gradient: "from-cyan-500 to-blue-500",
   },
   {
-    title: "Azure Cloud Computing Intern",
+    title: "Technical Intern",
+    company: "Bharat Electronics Limited",
+    location: "India",
+    duration: "Sep 2024 – Oct 2024",
+    description: [
+      "Gained exposure to sonar and radar systems with practical understanding of defense communication technologies.",
+      "Learned fundamentals of electronic communication systems and real-time defense infrastructure workflows."
+    ],
+    type: "Defense Technology",
+    gradient: "from-emerald-400 to-teal-500",
+  },
+  {
+    title: "Cloud & Azure Intern",
     company: "EakTech",
     location: "India",
     duration: "Oct 2023 – Nov 2023",
     description: [
-      "Worked with Microsoft Azure services",
-      "Cloud deployment and management experience",
-      "Gained hands-on experience in modern cloud architecture",
+      "Worked on Microsoft Azure cloud services with hands-on exposure to deployment and cloud management workflows.",
+      "Assisted in cloud-based deployment configurations and gained understanding of modern cloud infrastructure practices."
     ],
     type: "Cloud Computing",
     gradient: "from-fuchsia-500 to-pink-500",
-  },
-  {
-    title: "Intern",
-    company: "Bharat Electronics Limited (BEL)",
-    location: "India",
-    duration: "Sep 2024 – Oct 2024",
-    description: [
-      "Exposure to sonar and radar systems",
-      "Defense-grade technologies and signal processing",
-      "Learned about mission-critical electronic components",
-    ],
-    type: "Defense Technology",
-    gradient: "from-emerald-400 to-teal-500",
   },
 ];
 

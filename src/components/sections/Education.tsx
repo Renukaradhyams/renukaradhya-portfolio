@@ -6,9 +6,9 @@ import { useRef } from "react";
 
 const education = [
   {
-    degree: "Bachelor of Engineering",
-    field: "Electronics and Communication",
-    institution: "Bapuji Institute of Engineering And Technology",
+    degree: "BE in Electronics and Communication",
+    field: "Electronics and Communication Engineering",
+    institution: "Bapuji Institute of Engineering and Technology",
     year: "Nov 2021 – July 2025",
     grade: "CGPA: 8.19",
   },
@@ -17,14 +17,14 @@ const education = [
     field: "Science",
     institution: "Sir M V PU College",
     year: "May 2020 – June 2021",
-    grade: "89%",
+    grade: "Percentage: 89",
   },
   {
     degree: "High School (SSLC)",
     field: "",
     institution: "Sri Taralabalu Central School",
     year: "Apr 2018 – May 2019",
-    grade: "90%",
+    grade: "Percentage: 90",
   },
 ];
 
@@ -36,13 +36,7 @@ const certifications = [
     color: "from-purple-500 to-pink-500",
   },
   {
-    name: "NLP & Deep Learning",
-    issuer: "Infosys Springboard",
-    year: "Sep 2023",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    name: "Microsoft Azure AI Fundamentals",
+    name: "Microsoft Azure, AI Fundamentals",
     issuer: "Microsoft",
     year: "Aug 2023",
     color: "from-cyan-500 to-teal-500",
@@ -50,32 +44,26 @@ const certifications = [
   {
     name: "Python Programming",
     issuer: "NPTEL",
-    year: "2023",
+    year: "May 2023 – Oct 2024",
     color: "from-emerald-500 to-green-500",
   },
   {
     name: "Java Programming",
     issuer: "NPTEL",
-    year: "2023",
+    year: "May 2023 – Oct 2024",
     color: "from-orange-500 to-red-500",
   },
   {
     name: "Data Analytics",
     issuer: "NPTEL",
-    year: "2024",
+    year: "May 2023 – Oct 2024",
     color: "from-indigo-500 to-purple-500",
   },
   {
     name: "Data Science",
     issuer: "NPTEL",
-    year: "2024",
+    year: "May 2023 – Oct 2024",
     color: "from-rose-500 to-pink-500",
-  },
-  {
-    name: "BEL Internship",
-    issuer: "Bharat Electronics Limited",
-    year: "2024",
-    color: "from-amber-500 to-orange-500",
   },
 ];
 
@@ -87,21 +75,15 @@ const achievements = [
     year: "May 2025",
   },
   {
-    icon: Trophy,
-    title: "Winner",
-    description: "HexaCam Robot - Best Project",
-    year: "July 2024",
-  },
-  {
     icon: Medal,
     title: "Runner-Up",
-    description: "STM32 Microcontrollers - Institute Level",
+    description: "STM32 – Microcontrollers | Institute-Level",
     year: "Nov 2023",
   },
   {
     icon: Medal,
     title: "Runner-Up",
-    description: "ISTE State Level - Product Marketing",
+    description: "ISTE – State Level | Product Marketing",
     year: "July 2022",
   },
 ];
