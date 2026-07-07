@@ -5,9 +5,10 @@ import TypingAnimation from "@/components/ui/TypingAnimation";
 import profileImage from "/Renukaradhya_MS.jpeg";
 
 const roles = [
-  "Associate Software Engineer",
-  "Full Stack Developer",
-  "React & Node.js Specialist",
+  "Web Development Manager",
+  "Full Stack Web Developer",
+  "Technical Lead",
+  "Building Scalable Digital Solutions",
 ];
 
 const techStack = [

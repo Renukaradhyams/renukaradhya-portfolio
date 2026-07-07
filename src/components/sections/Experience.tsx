@@ -5,17 +5,29 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    title: "Associate Software Engineer",
-    company: "Sakyaitech Solutions",
-    location: "India",
-    duration: "Sep 2025 – Present",
+    title: "Web Development Manager",
+    company: "BSC – The Textile Mall",
+    location: "Davangere, Karnataka",
+    duration: "July 2026 – Present",
     description: [
-      "Developed scalable full-stack web applications using React.js, Node.js, TypeScript, and MySQL for client-based business solutions.",
-      "Built responsive frontend interfaces and integrated REST APIs, SMTP email services, and database-driven functionalities for inquiry automation and workflow management systems.",
-      "Collaborated on deployment workflows, version control, debugging, testing, and production-ready web application maintenance using GitHub and Hostinger.",
-      "Worked on SEO optimization, frontend performance enhancement, responsive UI development, and debugging across multiple live client projects."
+      "Lead end-to-end web development projects from planning to deployment.",
+      "Manage and mentor web development team members.",
+      "Coordinate with designers, developers, marketing, and business stakeholders.",
+      "Gather business requirements and convert them into scalable technical solutions.",
+      "Design, develop, maintain, and enhance business websites and web applications.",
+      "Implement technical improvements and new website features.",
+      "Optimize website performance, Core Web Vitals, and loading speed.",
+      "Implement Technical SEO and website optimization strategies.",
+      "Perform code reviews and maintain coding standards.",
+      "Develop responsive and mobile-friendly web interfaces.",
+      "Implement API integrations and third-party services.",
+      "Troubleshoot production issues and resolve technical problems.",
+      "Deploy, monitor, and maintain production websites.",
+      "Ensure website security, scalability, and reliability.",
+      "Follow Agile development methodologies and project management practices.",
+      "Ensure timely delivery while maintaining high-quality standards."
     ],
-    type: "Software Engineering",
+    type: "Full-time",
     gradient: "from-violet-500 to-indigo-500",
   },
   {

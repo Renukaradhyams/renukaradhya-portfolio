@@ -115,7 +115,7 @@ const Contact = () => {
             Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Connect</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            I'm actively seeking opportunities in software engineering. 
+            I'm actively seeking opportunities in Web Development Management and Technical Leadership. 
             Feel free to reach out for collaborations, opportunities, or just to say hi.
           </p>
         </FadeIn>

@@ -55,7 +55,7 @@ const Footer = () => {
               Renukaradhya<span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">.</span>
             </motion.p>
             <p className="text-muted-foreground font-medium tracking-wide">
-              Software Engineer | Full Stack Developer
+              Web Development Manager | Full Stack Developer
             </p>
           </div>
 

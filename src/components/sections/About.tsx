@@ -32,7 +32,7 @@ const highlights = [
   {
     icon: Globe,
     title: "Real-world Solutions",
-    description: "Delivering business value through software engineering",
+    description: "Delivering business value through scalable web solutions",
     gradient: "from-emerald-400 to-teal-500",
   },
 ];
@@ -73,13 +73,13 @@ const About = () => {
             
             <div className="space-y-5 text-muted-foreground leading-relaxed text-lg">
               <p>
-                <strong className="text-foreground font-semibold">Renukaradhya M S</strong> is an Associate Software Engineer with hands-on experience in building scalable web applications using React.js, Node.js, Express.js, TypeScript, REST APIs, and MySQL.
+                I am currently working as a <strong className="text-foreground font-semibold">Web Development Manager</strong>, leading end-to-end web development initiatives and managing modern business websites and digital platforms. My role involves planning, developing, optimizing, and maintaining scalable web applications while ensuring high performance, security, and exceptional user experience.
               </p>
               <p>
-                Holding a BE in Electronics and Communication Engineering with a <strong className="text-foreground font-semibold">CGPA of 8.19</strong>, I bring a strong problem-solving mindset and analytical approach to every project.
+                I collaborate closely with stakeholders to understand business requirements, transform them into technical solutions, oversee project execution, review code quality, mentor development teams, and ensure timely project delivery. I focus on building responsive, secure, SEO-friendly, and scalable digital products using modern web technologies and best development practices.
               </p>
               <p>
-                My experience spans across multiple real client projects, where I focus on delivering high-performance, accessible, and visually stunning applications that solve real-world business challenges.
+                I am passionate about solving complex technical challenges, continuous learning, and delivering innovative web solutions that create measurable business value.
               </p>
             </div>
 
