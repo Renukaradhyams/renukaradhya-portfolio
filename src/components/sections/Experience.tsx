@@ -7,28 +7,28 @@ const experiences = [
   {
     title: "Web Development Manager",
     company: "BSC – The Textile Mall",
-    location: "Davangere, Karnataka",
-    duration: "July 2026 – Present",
+    location: "Bengaluru, Karnataka, India (Hybrid)",
+    duration: "Jul 2026 – Present",
     description: [
-      "Lead end-to-end web development projects from planning to deployment.",
-      "Manage and mentor web development team members.",
-      "Coordinate with designers, developers, marketing, and business stakeholders.",
-      "Gather business requirements and convert them into scalable technical solutions.",
-      "Design, develop, maintain, and enhance business websites and web applications.",
-      "Implement technical improvements and new website features.",
-      "Optimize website performance, Core Web Vitals, and loading speed.",
-      "Implement Technical SEO and website optimization strategies.",
-      "Perform code reviews and maintain coding standards.",
-      "Develop responsive and mobile-friendly web interfaces.",
-      "Implement API integrations and third-party services.",
-      "Troubleshoot production issues and resolve technical problems.",
-      "Deploy, monitor, and maintain production websites.",
-      "Ensure website security, scalability, and reliability.",
-      "Follow Agile development methodologies and project management practices.",
-      "Ensure timely delivery while maintaining high-quality standards."
+      "Leading the development, maintenance, and optimization of BSC’s digital platforms and e-commerce websites.",
+      "Responsible for implementing technical enhancements, website performance optimization, SEO, third-party integrations, bug fixes, and new feature development.",
+      "Coordinating with cross-functional teams to ensure a seamless user experience and efficient digital operations."
     ],
     type: "Full-time",
     gradient: "from-violet-500 to-indigo-500",
+  },
+  {
+    title: "Associate Software Engineer",
+    company: "Sakyaitech Solutions",
+    location: "Bengaluru, Karnataka, India (On-site)",
+    duration: "Sep 2025 – Jun 2026",
+    description: [
+      "Developing scalable full-stack web applications using React.js, SQL, and modern frontend technologies.",
+      "Built responsive frontend interfaces and integrated REST APIs, SMTP email services, and database-driven functionalities for inquiry automation and workflow management systems.",
+      "Collaborated on deployment workflows, version control, debugging, testing, and production-ready web application maintenance."
+    ],
+    type: "Full-time",
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
     title: "Web Development Intern",
